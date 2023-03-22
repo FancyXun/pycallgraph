@@ -12,6 +12,7 @@ from collections import defaultdict
 import networkx as nx
 from networkx.readwrite.gpickle import write_gpickle
 
+
 from build_func_deps_config import (
     source_roots, exclude_folders, enable_ambiguity_call_guessing, output_folder)
 
@@ -307,7 +308,8 @@ def scan_source_files(visitor_cls):
         for folder, dirs, files in os.walk(source_root):
             dirs[:] = [d for d in dirs if d not in exclude_folders]
             for source_file in files:
-                if fnmatch.fnmatch(source_file, '*.py') and ('test' not in source_file):
+                # if fnmatch.fnmatch(source_file, '*.py') and ('test' not in source_file):
+                if fnmatch.fnmatch(source_file, '*.py') :
                     with open(os.path.join(folder, source_file), 'r', encoding='utf-8') as source:
                         print('Scanning {}'.format(source.name))
                         ast_tree = ast.parse(source.read())

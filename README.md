@@ -14,6 +14,13 @@ The following example is the result of checking `load_plugins` function of the o
 ## How to use on Linux
 Note in the following steps, mainly use Linux Python `virtualenv` path `./venv/bin`.  
 *(for Windows, see the next chapter)*
+
+In mac:  
+```
+brew install graphviz
+```
+Note: 因为是静态查询网络路径，代码中需要显式调用
+   
 1. Clone the code:
     ```shell script
     git clone https://github.com/zw-normal/pycallgraph.git
